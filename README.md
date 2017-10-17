@@ -1,4 +1,4 @@
-# API
+# Reading API Documentation
 
 ## The Assignment
 
@@ -6,9 +6,24 @@ Read the documentation provided in the links in order to answer the questions be
 
 ## Setup
 
-```js
+#### Files + Folders
+```sh
+# create assignment directory
+cd ~/Documents/muktek/assignments
+mkdir assignment--reading-api-documentation
+cd assignment--reading-api-documentation
 
+# install assignment files
+curl https://raw.githubusercontent.com/muktek/assignment--reading-api-documentation/master/assignment-files.zip > assignment-files.zip
+
+unzip assignment-files.zip
 ```
+
+#### Instructions
+Read the questions below and print the answers to the DOM. In order to arrive at the answer, You will need to read the API documentation and make the request to the API.
+
+There is an example on how to complete each question in `js/api-01-iceland.js`.
+
 
 ## Questions
 
@@ -45,7 +60,7 @@ https://vpic.nhtsa.dot.gov/api/
 
 
 ##### TV Maze
-https://vpic.nhtsa.dot.gov/api/
+http://www.tvmaze.com/api
 
 1. What is the average rating for the show Better Call Saul?
 
