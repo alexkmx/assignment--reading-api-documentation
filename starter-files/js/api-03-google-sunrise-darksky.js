@@ -22,6 +22,16 @@
 
 const answerElement_apimashup_1 = document.getElementById('apimashup-1')
 
+request.get('https://maps.googleapis.com/maps/api/geocode/json?address=Montreal')
+  .then(function(data) {
+    // console.log(data.body.results);
+
+    let montLat = data.body.results[0].geometry.location.lat
+    let montLon = data.body.results[0].geometry.location.lng
+
+    answerElement_apimashup_1.innerHTML = 'lat: '+montLat+' '+ 'long: '+montLon
+  })
+
 
 
 
@@ -29,6 +39,13 @@ const answerElement_apimashup_1 = document.getElementById('apimashup-1')
 //  (2) What time does the sun set in Montreal (based on the Google geocode coordinates)?
 
 const answerElement_apimashup_2 = document.getElementById('apimashup-2')
+request.get('https://api.sunrise-sunset.org/json?lat=45.5016889&lng=-73.567256')
+  .then(function(data) {
+
+    let monSunset = data.body.results.sunset
+
+    answerElement_apimashup_2.innerHTML = monSunset
+  })
 
 
 
@@ -39,6 +56,14 @@ const answerElement_apimashup_2 = document.getElementById('apimashup-2')
 //  (3) What is the weekly weather forecast in Montreal? (look for summary property in 'daily')
 
 const answerElement_apimashup_3 = document.getElementById('apimashup-3')
+
+request.get('https://api.darksky.net/forecast/62e9916d854bb0e84b8b404c81a33446/45.5016889,-73.567256')
+  .then(function(data) {
+// console.log(data.body.daily.summary);
+    let monSunset = data.body.daily.summary
+    //
+    answerElement_apimashup_3.innerHTML = monSunset
+  })
 
 
 
